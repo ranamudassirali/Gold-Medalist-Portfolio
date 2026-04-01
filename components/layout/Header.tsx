@@ -51,18 +51,11 @@ export default function Header() {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-
-    // Delay scroll slightly to allow mobile menu to start closing
-    // and avoid animation conflicts
+    // Use native anchor scroll with CSS smooth behavior
+    // The CSS scroll-padding-top: 5rem will offset for the fixed header
     setTimeout(() => {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
-    }, 150); // 150ms delay - matches typical mobile menu animation
+      window.location.hash = href;
+    }, 150);
   };
 
   return (
