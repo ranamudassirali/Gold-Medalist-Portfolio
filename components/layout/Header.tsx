@@ -52,17 +52,17 @@ export default function Header() {
     e.preventDefault();
     setMobileMenuOpen(false);
 
-    const element = document.querySelector(href);
-    if (element) {
-      const headerOffset = 80; // Adjust based on your header height
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
+    // Delay scroll slightly to allow mobile menu to start closing
+    // and avoid animation conflicts
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    }, 150); // 150ms delay - matches typical mobile menu animation
   };
 
   return (
