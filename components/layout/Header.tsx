@@ -48,6 +48,23 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+
+    const element = document.querySelector(href);
+    if (element) {
+      const headerOffset = 80; // Adjust based on your header height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <motion.header
       initial={prefersReducedMotion ? { y: 0 } : { y: -100 }}
@@ -64,6 +81,7 @@ export default function Header() {
           <motion.a
             href="#home"
             whileHover={{ scale: 1.05 }}
+            onClick={(e) => scrollToSection(e, "#home")}
             className="text-2xl font-bold gradient-text"
           >
             RMA
@@ -76,6 +94,7 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 whileHover={{ scale: 1.05 }}
+                onClick={(e) => scrollToSection(e, item.href)}
                 className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors relative group focus-ring rounded-sm py-1"
                 aria-label={`Navigate to ${item.name} section`}
               >
@@ -129,7 +148,7 @@ export default function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => scrollToSection(e, item.href)}
                   className="block py-3 px-4 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-primary/10 transition-colors rounded-lg focus-ring"
                   aria-label={`Navigate to ${item.name} section`}
                 >
