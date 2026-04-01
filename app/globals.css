@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* DEFAULT: Dark Mode (Obsidian / Deep Slate) - WCAG AA Compliant */
+    --background: 222 47% 4%; /* Very dark slate - #0a0f17 */
+    --foreground: 210 40% 98%; /* Near white - #f0f4f8 */
+
+    --card: 222 47% 6%; /* Slightly lighter than background */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary: Vibrant Violet/Purple with enhanced contrast */
+    --primary: 263 80% 60%; /* Slightly brighter - #9f67ff */
+    --primary-foreground: 210 40% 100%; /* Pure white for better contrast */
+
+    /* Secondary: Deep muted slate */
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted colors for descriptive text - improved contrast */
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 25% 72%; /* Lighter for better readability */
+
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 45%; /* More visible red */
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 263 70% 50%;
+
+    /* RGB variants for opacity/blur calculations */
+    --card-rgb: 10, 15, 25;
+    --border-rgb: 30, 41, 59;
+
+    --radius: 0.75rem;
+
+    /* Extended color scale for better theming */
+    --primary-50: 263 80% 96%;
+    --primary-100: 263 80% 90%;
+    --primary-200: 263 80% 80%;
+    --primary-300: 263 80% 70%;
+    --primary-400: 263 80% 65%;
+    --primary-500: 263 80% 60%;
+    --primary-600: 263 80% 55%;
+    --primary-700: 263 80% 50%;
+    --primary-800: 263 80% 45%;
+    --primary-900: 263 80% 40%;
+
+    /* Accent colors for highlights */
+    --neon-cyan: 180 100% 50%;
+    --neon-pink: 330 100% 50%;
+  }
+
+  .light {
+    /* OVERRIDE: Light Mode (Soft Pearl/Slate) - WCAG AA Compliant */
+    --background: 210 40% 98%; /* Very light gray-blue - #f0f4f8 */
+    --foreground: 222 47% 4%; /* Near black - #0a0f17 */
+
+    --card: 0 0% 100%; /* Pure white */
+    --card-foreground: 222 47% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 4%;
+
+    /* Primary: Vibrant Blue/Indigo with enhanced contrast */
+    --primary: 247 80% 60%; /* Slightly brighter - #5b8aff */
+    --primary-foreground: 210 40% 98%; /* White text on primary */
+
+    --secondary: 210 40% 96%; /* Very light gray */
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 25% 45%; /* Darker for better readability */
+
+    --accent: 214 32% 91%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 247 70% 50%;
+
+    /* RGB variants for light mode */
+    --card-rgb: 255, 255, 255;
+    --border-rgb: 226, 232, 240;
+
+    /* Accent colors for highlights */
+    --neon-cyan: 180 100% 50%;
+    --neon-pink: 330 100% 50%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased font-sans selection:bg-primary/30 selection:text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-foreground font-bold;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-purple-600;
+  }
+
+  .glass {
+    @apply bg-card/60 backdrop-blur-xl border border-border bg-clip-padding shadow-lg;
+  }
+
+  .glass-card {
+    @apply glass hover:bg-card/80 transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Enhanced focus styles for accessibility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-3 bg-primary text-primary-foreground rounded-md font-medium focus:outline-none focus:ring-4 focus:ring-primary/50 focus:ring-offset-2;
+  }
+
+  /* Animated background gradients */
+  .bg-hero-gradient {
+    @apply absolute inset-0 bg-gradient-to-br from-background via-card to-background;
+  }
+
+  /* Smooth transitions for theme changes */
+  .theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+}
