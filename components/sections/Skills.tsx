@@ -112,26 +112,26 @@ export default function Skills() {
               whileInView={prefersReducedMotion ? undefined : "visible"}
               viewport={prefersReducedMotion ? undefined : { once: true }}
               whileHover={prefersReducedMotion ? {} : { y: -4 }}
-              className="glass-card rounded-2xl p-6 hover:ring-2 hover:ring-primary/40 transition-all duration-300 relative overflow-hidden group"
+              className="glass-card rounded-xl p-4 hover:ring-2 hover:ring-primary/40 transition-all duration-300 relative overflow-hidden group"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-              <h3 className="text-xl font-bold text-foreground mb-6 group-hover:text-primary transition-colors">
+              <h3 className="text-lg font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
                 {category.title}
               </h3>
 
-              <div className="flex flex-wrap gap-2 relative z-10">
+              <div className="flex flex-wrap gap-1.5 relative z-10">
                 {category.skills.map((skill) => (
                   <span
                     key={skill.name}
                     className={`
-                      inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium
+                      inline-flex items-center px-2 py-1 rounded-full text-xs font-medium
                       bg-gradient-to-r ${getSkillBadgeColor(skill.level)}
-                      text-white shadow-md hover:shadow-lg transition-shadow cursor-default
+                      text-white shadow-sm hover:shadow transition-shadow cursor-default
                     `}
                   >
                     {skill.name}
-                    <span className="ml-1.5 text-xs opacity-90">• {skill.level}%</span>
+                    <span className="ml-1 text-[10px] opacity-90">• {skill.level}%</span>
                   </span>
                 ))}
               </div>

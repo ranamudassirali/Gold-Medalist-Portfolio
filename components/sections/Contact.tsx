@@ -81,7 +81,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 lg:px-8 relative">
+    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/30 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto">
@@ -176,7 +176,7 @@ export default function Contact() {
             viewport={prefersReducedMotion ? undefined : { once: true }}
             transition={{ duration: prefersReducedMotion ? 0 : 0.8 }}
             onSubmit={handleSubmit}
-            className="glass rounded-2xl p-8 space-y-6"
+            className="glass rounded-xl p-5 space-y-4 max-w-xl mx-auto"
           >
             <div>
               <label
@@ -192,7 +192,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-[rgba(var(--card-rgb),0.5)] border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                className="w-full px-3 py-2.5 bg-card/50 border border-border rounded-lg text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
                 placeholder="John Doe"
               />
             </div>
@@ -211,7 +211,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-[rgba(var(--card-rgb),0.5)] border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                className="w-full px-3 py-2.5 bg-card/50 border border-border rounded-lg text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
                 placeholder="john@example.com"
               />
             </div>
@@ -229,8 +229,8 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows={6}
-                className="w-full px-4 py-3 bg-card/50 border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-neon-blue transition-all duration-300 resize-none"
+                rows={4}
+                className="w-full px-3 py-2.5 bg-card/50 border border-border rounded-lg text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 resize-none"
                 placeholder="Tell me about your project..."
               />
             </div>
@@ -261,10 +261,10 @@ export default function Contact() {
 
             <motion.button
               type="submit"
-              whileHover={{ y: -4 }}
+              whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
               disabled={isSubmitting}
-              className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-primary/70 rounded-lg font-medium text-primary-foreground shadow-sm hover:shadow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-gradient-to-r from-primary to-primary/70 rounded-lg text-sm font-medium text-primary-foreground shadow-sm hover:shadow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <>

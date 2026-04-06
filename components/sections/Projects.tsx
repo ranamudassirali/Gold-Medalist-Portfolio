@@ -56,7 +56,7 @@ export default function Projects() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section id="projects" className="py-32 px-6 lg:px-8 relative bg-background">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-background">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/10 to-transparent pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
@@ -80,7 +80,7 @@ export default function Projects() {
           initial={prefersReducedMotion ? "visible" : "hidden"}
           whileInView={prefersReducedMotion ? undefined : "visible"}
           viewport={prefersReducedMotion ? undefined : { once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6"
         >
           {projects.map((project, index) => (
             <motion.article
@@ -89,10 +89,10 @@ export default function Projects() {
               initial={prefersReducedMotion ? "visible" : undefined}
               whileInView={prefersReducedMotion ? undefined : "visible"}
               viewport={prefersReducedMotion ? undefined : { once: true }}
-              className="group glass-card rounded-3xl overflow-hidden hover:ring-2 hover:ring-primary/40 focus-within:ring-2 focus-within:ring-primary/40 transition-all duration-300 relative flex flex-col h-full"
+              className="group glass-card rounded-2xl overflow-hidden hover:ring-2 hover:ring-primary/40 focus-within:ring-2 focus-within:ring-primary/40 transition-all duration-300 relative flex flex-col h-full max-w-sm mx-auto"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <div className="relative h-56 md:h-64 lg:h-72 overflow-hidden bg-gradient-to-br from-background to-secondary/50 shrink-0">
+              <div className="relative h-48 md:h-56 overflow-hidden bg-gradient-to-br from-background to-secondary/50 shrink-0">
                 <Image
                   src={project.image}
                   alt={`${project.title} - Project screenshot showing the user interface and key features`}
@@ -104,11 +104,11 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
-              <div className="p-8 relative z-10 flex flex-col flex-1">
+              <div className="p-5 relative z-10 flex flex-col flex-1">
                 <h3 className="text-2xl font-bold tracking-tight text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
-                <div className="text-slate-600 dark:text-slate-400 text-base mb-6">
+                <div className="text-slate-600 dark:text-slate-400 text-sm mb-4">
                   {project.description.split('\n').map((line, idx) => (
                     <p key={idx} className="mb-2 last:mb-0 leading-relaxed whitespace-pre-line">
                       {line}
@@ -116,39 +116,39 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex flex-wrap gap-2.5 mb-8 mt-4">
+                <div className="flex flex-wrap gap-2 mb-3 mt-3">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1.5 text-xs font-semibold rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-sm shadow-sm"
+                      className="px-2.5 py-1 text-[11px] font-medium rounded-full bg-primary/10 text-primary border border-primary/20"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-6 mt-auto">
+                <div className="flex items-center gap-3 mt-auto">
                   <motion.a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors group/link"
+                    whileHover={{ y: -2 }}
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 hover:text-foreground transition-colors group/link"
                   >
-                    <FaGithub size={18} className="group-hover/link:text-foreground transition-colors" />
-                    <span>View Code</span>
+                    <FaGithub size={14} className="group-hover/link:text-foreground transition-colors" />
+                    <span>Code</span>
                   </motion.a>
-                  
+
                   {project.demo !== "#" && (
                     <motion.a
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-foreground transition-colors group/link"
+                      whileHover={{ y: -2 }}
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:text-primary-foreground transition-colors group/link"
                     >
-                      <ExternalLink size={18} className="group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-transform" />
-                      <span>Live Demo</span>
+                      <ExternalLink size={14} className="group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-transform" />
+                      <span>Demo</span>
                     </motion.a>
                   )}
                 </div>
