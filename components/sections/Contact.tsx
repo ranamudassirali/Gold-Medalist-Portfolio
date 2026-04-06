@@ -81,7 +81,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 lg:px-8 relative">
+    <section id="contact" className="py-32 px-6 lg:px-8 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/30 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto">
@@ -92,10 +92,10 @@ export default function Contact() {
           transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 tracking-tight">
             Get In <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
             Have a project in mind? Let&apos;s create something amazing together.
           </p>
         </motion.div>
@@ -115,8 +115,8 @@ export default function Contact() {
                   <Mail size={22} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-1">Email</h3>
-                  <p className="text-muted-foreground">ranamudassirali9@gmail.com</p>
+                  <h3 className="text-xl font-bold tracking-tight text-foreground mb-1">Email</h3>
+                  <p className="text-slate-600 dark:text-slate-400">ranamudassirali9@gmail.com</p>
                 </div>
               </div>
 
@@ -125,8 +125,8 @@ export default function Contact() {
                   <MapPin size={22} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-1">Location</h3>
-                  <p className="text-muted-foreground">
+                  <h3 className="text-xl font-bold tracking-tight text-foreground mb-1">Location</h3>
+                  <p className="text-slate-600 dark:text-slate-400">
                     Lahore, Pakistan
                   </p>
                 </div>
@@ -158,10 +158,10 @@ export default function Contact() {
             </div>
 
             <div className="glass rounded-2xl p-6 border-primary/20">
-              <h4 className="text-lg font-semibold text-foreground mb-2">
+              <h4 className="text-lg font-semibold tracking-tight text-foreground mb-2">
                 Let&apos;s collaborate
               </h4>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-slate-600 dark:text-slate-400 text-sm">
                 I&apos;m currently available for freelance projects and full-time
                 opportunities. Whether you need a complete web application or
                 just want to explore ideas, I&apos;d love to hear from you.
@@ -261,10 +261,10 @@ export default function Contact() {
 
             <motion.button
               type="submit"
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ y: -4 }}
               whileTap={{ scale: 0.98 }}
               disabled={isSubmitting}
-              className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-primary/70 rounded-lg font-medium text-primary-foreground shadow-lg shadow-neon-purple/25 hover:shadow-neon-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-primary/70 rounded-lg font-medium text-primary-foreground shadow-sm hover:shadow transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <>

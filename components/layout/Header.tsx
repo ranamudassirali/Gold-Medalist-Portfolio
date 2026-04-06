@@ -65,8 +65,8 @@ export default function Header() {
       transition={prefersReducedMotion ? {} : { duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "glass py-4"
-          : "py-6 bg-transparent"
+          ? "bg-card/30 backdrop-blur-md border-b border-black/5 dark:border-white/5 py-3"
+          : "py-4 bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-8">

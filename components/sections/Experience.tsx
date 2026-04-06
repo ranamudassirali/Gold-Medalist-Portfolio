@@ -42,7 +42,7 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
@@ -54,7 +54,7 @@ export default function Experience() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section id="experience" className="py-24 px-6 lg:px-8 relative bg-background">
+    <section id="experience" className="py-32 px-6 lg:px-8 relative bg-background">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/10 to-transparent pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
@@ -68,7 +68,7 @@ export default function Experience() {
           <h2 className="text-4xl md:text-5xl font-display font-extrabold mb-4 tracking-tight">
             Professional <span className="gradient-text drop-shadow-sm">Experience</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-medium">
+          <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto font-medium">
             Building AI systems and cloud infrastructure at scale
           </p>
         </motion.div>
@@ -140,7 +140,7 @@ export default function Experience() {
                       </div>
                     </div>
 
-                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed text-left mb-4 md:mb-6">
+                    <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base leading-relaxed text-left mb-4 md:mb-6">
                       {exp.description}
                     </p>
 
@@ -148,7 +148,7 @@ export default function Experience() {
                       {exp.highlights.map((highlight, i) => (
                         <li
                           key={i}
-                          className="text-xs md:text-sm text-foreground/90 flex items-start gap-2 md:gap-3 w-full"
+                          className="text-xs md:text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2 md:gap-3 w-full"
                         >
                           <span className="text-primary mt-1 shrink-0 bg-primary/20 p-0.5 rounded-full">
                             <motion.div initial={{ scale: 0.8 }} whileHover={{ scale: 1.2 }}>

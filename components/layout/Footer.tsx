@@ -79,17 +79,13 @@ export default function Footer() {
             whileInView={prefersReducedMotion ? undefined : { opacity: 1 }}
             viewport={prefersReducedMotion ? undefined : { once: true }}
             transition={prefersReducedMotion ? {} : { delay: 0.3 }}
-            className="text-sm text-muted-foreground space-y-2"
+            className="text-sm space-y-2"
           >
-            <p className="flex items-center justify-center gap-2 flex-wrap">
+            <p className="flex items-center justify-center gap-2 flex-wrap text-slate-600 dark:text-slate-400">
               © {currentYear} Rana Mudassir Ali. All rights reserved.
             </p>
-            <p className="flex items-center justify-center gap-1 text-xs">
-              Built with
-              <span className="inline-flex items-center gap-1">
-                <Heart className="w-3 h-3 text-neon-pink fill-current" />
-              </span>
-              using Next.js 15, TypeScript, Tailwind CSS, and Framer Motion
+            <p className="flex items-center justify-center gap-1 text-xs font-medium text-slate-500 dark:text-slate-500 tracking-wide">
+              Designed by Rana
             </p>
           </motion.div>
         </div>

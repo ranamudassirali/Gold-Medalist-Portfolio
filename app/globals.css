@@ -125,11 +125,11 @@ html {
   }
 
   .glass {
-    @apply bg-card/60 backdrop-blur-xl border border-border bg-clip-padding shadow-lg;
+    @apply bg-card/60 backdrop-blur-md border border-black/5 dark:border-white/5 bg-clip-padding;
   }
 
   .glass-card {
-    @apply glass hover:bg-card/80 transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1;
+    @apply glass hover:bg-card/80 transition-all duration-300 ease-in-out hover:-translate-y-1;
   }
 
   .text-balance {

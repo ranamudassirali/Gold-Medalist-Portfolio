@@ -44,7 +44,7 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
@@ -56,7 +56,7 @@ export default function Projects() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section id="projects" className="py-24 px-6 lg:px-8 relative bg-background">
+    <section id="projects" className="py-32 px-6 lg:px-8 relative bg-background">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/10 to-transparent pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
@@ -70,7 +70,7 @@ export default function Projects() {
           <h2 className="text-4xl md:text-5xl font-display font-extrabold mb-4 tracking-tight">
             <span className="gradient-text drop-shadow-sm">Featured</span> Projects
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-medium">
+          <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto font-medium">
             A selection of my recent work showcasing expertise in full-stack development and intelligent systems.
           </p>
         </motion.div>
@@ -104,11 +104,11 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
-              <div className="p-8 relative z-10 flex flex-col grow">
-                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+              <div className="p-8 relative z-10 flex flex-col flex-1">
+                <h3 className="text-2xl font-bold tracking-tight text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
-                <div className="text-muted-foreground text-base mb-6">
+                <div className="text-slate-600 dark:text-slate-400 text-base mb-6">
                   {project.description.split('\n').map((line, idx) => (
                     <p key={idx} className="mb-2 last:mb-0 leading-relaxed whitespace-pre-line">
                       {line}

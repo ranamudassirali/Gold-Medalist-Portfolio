@@ -103,7 +103,7 @@ export default function Hero() {
 
         <motion.p
           variants={itemVariants}
-          className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 text-balance leading-relaxed font-medium"
+          className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 text-balance leading-relaxed font-medium"
         >
           AI, Machine Learning & Data Science enthusiast building intelligent
           systems at the intersection of research and production.
@@ -115,9 +115,9 @@ export default function Hero() {
         >
           <motion.a
             href="#projects"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ y: -4 }}
             whileTap={{ scale: 0.95 }}
-            className="group inline-flex items-center gap-2 px-8 py-4 bg-primary rounded-full font-semibold text-primary-foreground shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] transition-all duration-300"
+            className="group inline-flex items-center gap-2 px-8 py-4 bg-primary rounded-full font-semibold text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300"
           >
             View My Work
             <ChevronRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
@@ -125,7 +125,7 @@ export default function Hero() {
 
           <motion.a
             href="#contact"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ y: -4 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 px-8 py-4 glass-card rounded-full font-semibold text-foreground transition-all duration-300"
           >
