@@ -9,7 +9,7 @@ import useReducedMotion from "@/hooks/useReducedMotion";
 const projects = [
   {
     title: "MindMerge",
-    description: "A 100% offline, privacy-first Academic AI Assistant that transforms lecture PDFs into a private knowledge base. Features a local RAG pipeline for source-aware answers and precise citations without cloud dependency. Highlights include 100% Local Inference, Semantic Search with Nomic Embeddings, Source-Aware Citations, and a Zero-Cost Architecture.",
+    description: "• 100% offline, privacy-first Academic AI Assistant using local RAG\n• Grounded answers with precise PDF citations via Ollama and FAISS\n• Zero-cost architecture optimized for local student research",
     tech: ["Python", "LangChain", "Ollama (TinyLlama)", "FAISS", "CustomTkinter"],
     github: "https://github.com/ranamudassirali/MindMerge-RAG-Assistant",
     demo: "#",
@@ -17,7 +17,7 @@ const projects = [
   },
   {
     title: "Corinna AI",
-    description: "A comprehensive AI-driven sales ecosystem that transforms customer engagement into conversions. It features an intelligent chatbot with real-time sentiment analysis for seamless live-agent handovers, automated personalized email marketing, and a smart lead management system that prioritizes prospects and automates meeting bookings.",
+    description: "• AI Sales Ecosystem with real-time sentiment analysis for live-agent handovers\n• Automated lead management, meeting bookings, and personalized email marketing\n• Full-stack SaaS implementation focused on conversion optimization",
     tech: ["Next.js", "OpenAI API", "PostgreSQL", "Stripe", "Sentiment Analysis"],
     github: "https://github.com/ranamudassirali/corinna-test",
     demo: "https://corinna-ai-git-feature-knowledge-base-hzg4s-projects.vercel.app",
@@ -25,7 +25,7 @@ const projects = [
   },
   {
     title: "🤖 Pakistan News Agent",
-    description: "An Autonomous AI News Editor using a LangGraph State Machine and ReAct logic. It thinks like a professional editor—evaluating, filtering, and summarizing real-time news with Gemini 2.5 Flash Lite and SerpAPI. Key Features: LangGraph State Machine (Reason + Act loop), Real-time News Retrieval via SerpAPI (Localized gl=pk), Multi-threaded Tkinter Desktop GUI, Automated Editorial Ranking & Filtering.",
+    description: "• Autonomous AI News Editor using LangGraph State Machines (ReAct loop)\n• Real-time editorial reasoning, filtering, and localized news briefings\n• Multi-threaded desktop interface powered by Gemini 2.5 Flash Lite",
     tech: ["Python", "LangGraph", "Gemini 2.5", "SerpAPI", "Tkinter"],
     github: "#",
     demo: "#",
@@ -108,11 +108,15 @@ export default function Projects() {
                 <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground text-base leading-relaxed mb-6">
-                  {project.description}
-                </p>
+                <div className="text-muted-foreground text-base mb-6">
+                  {project.description.split('\n').map((line, idx) => (
+                    <p key={idx} className="mb-2 last:mb-0 leading-relaxed whitespace-pre-line">
+                      {line}
+                    </p>
+                  ))}
+                </div>
 
-                <div className="flex flex-wrap gap-2.5 mb-8">
+                <div className="flex flex-wrap gap-2.5 mb-8 mt-4">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}

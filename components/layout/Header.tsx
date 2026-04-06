@@ -112,7 +112,7 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-foreground/80 focus-ring p-2 rounded-lg"
+              className="md:hidden text-foreground/80 focus-ring p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
@@ -131,23 +131,32 @@ export default function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 glass rounded-xl p-4 relative"
+              className="md:hidden mt-4 bg-card/40 backdrop-blur-md border border-border shadow-lg rounded-xl p-4 pt-12 relative"
               id="mobile-menu"
               role="dialog"
               aria-modal="true"
               aria-label="Mobile navigation menu"
             >
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => scrollToSection(e, item.href)}
-                  className="block py-3 px-4 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-primary/10 transition-colors rounded-lg focus-ring"
-                  aria-label={`Navigate to ${item.name} section`}
-                >
-                  {item.name}
-                </a>
-              ))}
+              <button
+                className="absolute top-4 right-4 z-[60] w-11 h-11 flex items-center justify-center rounded-full bg-card/60 backdrop-blur-md border border-border text-foreground hover:text-foreground/80 focus-ring"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close mobile navigation"
+              >
+                <X size={24} />
+              </button>
+              <div className="flex flex-col gap-6 text-center">
+                {navItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => scrollToSection(e, item.href)}
+                    className="block py-3 px-4 text-sm font-medium text-foreground hover:text-foreground hover:bg-primary/10 transition-colors rounded-lg focus-ring"
+                    aria-label={`Navigate to ${item.name} section`}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
